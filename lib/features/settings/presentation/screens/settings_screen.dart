@@ -46,46 +46,54 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
         ),
         const SizedBox(height: AppSpacing.md),
-        AppCard(
-          child: Row(
-            children: [
-              const Icon(Icons.dark_mode_outlined),
-              const SizedBox(width: AppSpacing.md),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Dark mode', style: Theme.of(context).textTheme.titleMedium),
-                    const SizedBox(height: 4),
-                    Text(
-                      'Switch between light and dark themes.',
-                      style: Theme.of(context).textTheme.bodyMedium,
-                    ),
-                  ],
+        Material(
+          child: AppCard(
+            child: Row(
+              children: [
+                const Icon(Icons.dark_mode_outlined),
+                const SizedBox(width: AppSpacing.md),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Dark mode', style: Theme.of(context).textTheme.titleMedium),
+                      const SizedBox(height: 4),
+                      Text(
+                        'Switch between light and dark themes.',
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              Switch(
-                value: themeController.isDarkMode,
-                onChanged: themeController.setDarkMode,
-              ),
-            ],
+                Switch(
+                  value: themeController.isDarkMode,
+                  onChanged: themeController.setDarkMode,
+                ),
+              ],
+            ),
           ),
         ),
         const SizedBox(height: AppSpacing.md),
-        SwitchListTile(
-          value: notifications,
-          title: const Text('Notifications'),
-          onChanged: (value) => setState(() => notifications = value),
+        Material(
+          child: SwitchListTile(
+            value: notifications,
+            title: const Text('Notifications'),
+            onChanged: (value) => setState(() => notifications = value),
+          ),
         ),
-        SwitchListTile(
-          value: microphone,
-          title: const Text('Microphone'),
-          onChanged: (value) => setState(() => microphone = value),
+        Material(
+          child: SwitchListTile(
+            value: microphone,
+            title: const Text('Microphone'),
+            onChanged: (value) => setState(() => microphone = value),
+          ),
         ),
-        SwitchListTile(
-          value: audio,
-          title: const Text('Audio'),
-          onChanged: (value) => setState(() => audio = value),
+        Material(
+          child: SwitchListTile(
+            value: audio,
+            title: const Text('Audio'),
+            onChanged: (value) => setState(() => audio = value),
+          ),
         ),
       ],
     );

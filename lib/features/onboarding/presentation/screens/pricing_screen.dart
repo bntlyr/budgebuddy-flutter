@@ -29,6 +29,7 @@ class _PricingScreenState extends State<PricingScreen> {
         children: [
           _PlanTile(
             title: 'Free',
+            description: 'Basic features to get you started.',
             price: '\$/mo',
             selected: selected == 'Free',
             onTap: () => setState(() => selected = 'Free'),
@@ -36,6 +37,7 @@ class _PricingScreenState extends State<PricingScreen> {
           const SizedBox(height: AppSpacing.md),
           _PlanTile(
             title: 'Plus',
+            description: 'Everything you need to grow your business.',
             price: '\$9.99/mo',
             selected: selected == 'Plus',
             onTap: () => setState(() => selected = 'Plus'),
@@ -43,6 +45,7 @@ class _PricingScreenState extends State<PricingScreen> {
           const SizedBox(height: AppSpacing.md),
           _PlanTile(
             title: 'Pro',
+            description: 'All features, priority support, and more.',
             price: '\$19.99/mo',
             selected: selected == 'Pro',
             onTap: () => setState(() => selected = 'Pro'),
@@ -76,12 +79,14 @@ class _PricingScreenState extends State<PricingScreen> {
 class _PlanTile extends StatelessWidget {
   final String title;
   final String price;
+  final String description;
   final bool selected;
   final VoidCallback onTap;
 
   const _PlanTile({
     required this.title,
     required this.price,
+    required this.description,
     required this.selected,
     required this.onTap,
   });

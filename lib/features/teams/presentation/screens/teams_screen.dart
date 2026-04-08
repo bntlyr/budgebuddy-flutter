@@ -32,6 +32,7 @@ class TeamsScreen extends StatelessWidget {
               padding: EdgeInsets.zero,
               children: [
                 AppCard(
+                  borderRadius: 0,
                   padding: EdgeInsets.zero,
                   child: Column(
                     children: [

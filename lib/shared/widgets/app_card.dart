@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class AppCard extends StatelessWidget {
   final Widget child;
   final EdgeInsetsGeometry? padding;
+  final double borderRadius;
 
   const AppCard({
     super.key,
     required this.child,
     this.padding,
+    this.borderRadius = 18,
   });
 
   @override
@@ -19,7 +21,7 @@ class AppCard extends StatelessWidget {
       padding: padding ?? const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: colorScheme.surface,
-        borderRadius: BorderRadius.circular(18),
+        borderRadius: BorderRadius.circular(borderRadius),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: Theme.of(context).brightness == Brightness.dark ? 0.08 : 0.02),

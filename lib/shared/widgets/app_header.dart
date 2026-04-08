@@ -7,21 +7,19 @@ class AppHeader extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    final logoAsset = isDarkMode ? 'assets/white-mode-logo.png' : 'assets/dark-mode-logo.png';
+
     return AppBar(
       leadingWidth: 64,
       leading: Padding(
         padding: const EdgeInsets.only(left: 16),
         child: Center(
-          child: GestureDetector(
-            onTap: () => Navigator.pushNamed(context, AppRouter.settings),
-            child: CircleAvatar(
-              radius: 20,
-              backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-              child: Icon(
-                Icons.person,
-                color: Theme.of(context).colorScheme.onPrimaryContainer,
-              ),
-            ),
+          child: Image.asset(
+            logoAsset,
+            width: 32,
+            height: 32,
+            fit: BoxFit.contain,
           ),
         ),
       ),

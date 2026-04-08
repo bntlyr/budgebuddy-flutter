@@ -17,13 +17,24 @@ class NotificationsScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           final item = MockData.notifications[index];
           return Padding(
-            padding: const EdgeInsets.only(bottom: AppSpacing.sm),
+            padding: const EdgeInsets.only(bottom: AppSpacing.xs),
             child: AppCard(
+              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
               child: ListTile(
                 contentPadding: EdgeInsets.zero,
-                leading: const Icon(Icons.notifications_active_outlined),
-                title: Text(item.title),
-                subtitle: Text(item.subtitle),
+                dense: true,
+                leading: Icon(
+                  Icons.notifications_active_outlined,
+                  size: 20,
+                ),
+                title: Text(
+                  item.title,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                subtitle: Text(
+                  item.subtitle,
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
               ),
             ),
           );
