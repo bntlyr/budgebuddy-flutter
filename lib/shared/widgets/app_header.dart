@@ -8,7 +8,9 @@ class AppHeader extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    final logoAsset = isDarkMode ? 'assets/white-mode-logo.png' : 'assets/dark-mode-logo.png';
+    final logoAsset = isDarkMode
+        ? 'assets/dark-mode-logo.png'
+        : 'assets/white-mode-logo.png';
 
     return AppBar(
       leadingWidth: 64,
@@ -26,7 +28,8 @@ class AppHeader extends StatelessWidget implements PreferredSizeWidget {
       title: const SizedBox.shrink(),
       actions: [
         IconButton(
-          onPressed: () => Navigator.pushNamed(context, AppRouter.notifications),
+          onPressed: () =>
+              Navigator.pushNamed(context, AppRouter.notifications),
           icon: const Icon(Icons.notifications_none_outlined),
         ),
         const SizedBox(width: 8),

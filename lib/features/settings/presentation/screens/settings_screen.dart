@@ -33,13 +33,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Budge User', style: TextStyle(fontWeight: FontWeight.w700)),
+                    Text(
+                      'Budge User',
+                      style: TextStyle(fontWeight: FontWeight.w700),
+                    ),
                     Text('@budgerunner'),
                   ],
                 ),
               ),
               TextButton(
-                onPressed: () => Navigator.pushNamed(context, AppRouter.editProfile),
+                onPressed: () =>
+                    Navigator.pushNamed(context, AppRouter.editProfile),
                 child: const Text('Edit'),
               ),
             ],
@@ -56,7 +60,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Dark mode', style: Theme.of(context).textTheme.titleMedium),
+                      Text(
+                        'Dark mode',
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
                       const SizedBox(height: 4),
                       Text(
                         'Switch between light and dark themes.',
@@ -74,25 +81,28 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
         ),
         const SizedBox(height: AppSpacing.md),
-        Material(
-          child: SwitchListTile(
-            value: notifications,
-            title: const Text('Notifications'),
-            onChanged: (value) => setState(() => notifications = value),
-          ),
-        ),
-        Material(
-          child: SwitchListTile(
-            value: microphone,
-            title: const Text('Microphone'),
-            onChanged: (value) => setState(() => microphone = value),
-          ),
-        ),
-        Material(
-          child: SwitchListTile(
-            value: audio,
-            title: const Text('Audio'),
-            onChanged: (value) => setState(() => audio = value),
+        AppCard(
+          padding: EdgeInsets.zero,
+          child: Column(
+            children: [
+              SwitchListTile(
+                value: notifications,
+                title: const Text('Notifications'),
+                onChanged: (value) => setState(() => notifications = value),
+              ),
+              const Divider(height: 1),
+              SwitchListTile(
+                value: microphone,
+                title: const Text('Microphone'),
+                onChanged: (value) => setState(() => microphone = value),
+              ),
+              const Divider(height: 1),
+              SwitchListTile(
+                value: audio,
+                title: const Text('Audio'),
+                onChanged: (value) => setState(() => audio = value),
+              ),
+            ],
           ),
         ),
       ],

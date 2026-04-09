@@ -34,7 +34,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    final logoAsset = isDarkMode ? 'assets/white-mode-logo.png' : 'assets/dark-mode-logo.png';
+    final logoAsset = isDarkMode
+        ? 'assets/dark-mode-logo.png'
+        : 'assets/white-mode-logo.png';
 
     return Scaffold(
       body: Center(
@@ -48,7 +50,10 @@ class _SplashScreenState extends State<SplashScreen> {
               fit: BoxFit.contain,
             ),
             const SizedBox(height: 16),
-            Text(AppStrings.appName, style: Theme.of(context).textTheme.headlineLarge),
+            Text(
+              AppStrings.appName,
+              style: Theme.of(context).textTheme.headlineLarge,
+            ),
           ],
         ),
       ),

@@ -11,7 +11,9 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    final logoAsset = isDarkMode ? 'assets/white-mode-logo.png' : 'assets/dark-mode-logo.png';
+    final logoAsset = isDarkMode
+        ? 'assets/dark-mode-logo.png'
+        : 'assets/white-mode-logo.png';
 
     return Scaffold(
       body: SafeArea(
@@ -27,9 +29,15 @@ class WelcomeScreen extends StatelessWidget {
                 child: Image.asset(logoAsset, fit: BoxFit.contain),
               ),
               const SizedBox(height: AppSpacing.xl),
-              Text(AppStrings.appName, style: Theme.of(context).textTheme.headlineMedium),
+              Text(
+                AppStrings.appName,
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
               const SizedBox(height: AppSpacing.sm),
-              Text(AppStrings.tagline, style: Theme.of(context).textTheme.bodyLarge),
+              Text(
+                AppStrings.tagline,
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
               const Spacer(),
               AppButton(
                 label: 'Get Started',
